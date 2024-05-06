@@ -14,12 +14,19 @@ def new_file_with_content(file_name, content):
             file.write(content)
 
 def rename_file(previous_name, new_name):
-    if previous_name in os.listdir():
-        print(f'{previous_name} and {new_name}')
-        os.rename(previous_name, new_name)
-    else:
+    if new_name in os.listdir():
+        print(f'{new_name} already exists in the directory')
+    elif previous_name not in os.listdir():
         print(f'{previous_name} does not exist in the directory')
+    else:
+        os.rename(previous_name, new_name)
 
-def list_files():
+def remove_folder(folder_name):
+    if folder_name in os.listdir():
+        os.remove(folder_name)
+    else:
+        print(f'{folder_name} does not exist in the directory')
+
+def list_files_and_folders():
     print(os.listdir())
 
