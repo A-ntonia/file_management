@@ -5,7 +5,7 @@ def add_new_file(folder_path, file_name):
         print(f'This folder path: {folder_path} does not exist')
         return
     elif file_name in os.listdir(folder_path):
-        print(f'{file_name} already exists in the directory')
+        print(f'File name: {file_name} already exists in the directory')
         return
     else:
         os.system(f'touch {folder_path}/{file_name}')
@@ -26,10 +26,10 @@ def rename_file(folder_path, previous_name, new_name):
         print(f'This folder path: {folder_path} does not exist')
         return
     elif previous_name not in os.listdir(folder_path):
-        print(f'{previous_name} does not exist in the directory')
+        print(f'File: {previous_name} does not exist in the directory')
         return
     elif new_name in os.listdir(folder_path):
-        print(f'{new_name} already exists in the directory')
+        print(f'A file with this name: {new_name} already exists in the directory')
         return
     else:
         os.rename(f'{folder_path}/{previous_name}', f'{folder_path}/{new_name}')
@@ -39,7 +39,7 @@ def delete_file(folder_path, file_name):
         print(f'This folder path: {folder_path} does not exist')
         return
     elif file_name not in os.listdir(folder_path):
-        print(f'{file_name} does not exist in the directory')
+        print(f'File: {file_name} does not exist in the directory')
         return
     else:
         os.remove(f'{folder_path}/{file_name}')
@@ -49,10 +49,10 @@ def copy_file(folder_path, file_name, copied_file_name):
         print(f'This folder path: {folder_path} does not exist')
         return
     elif file_name not in os.listdir(folder_path):
-        print(f'{file_name} does not exist in the directory')
+        print(f'File: {file_name} does not exist in the directory')
         return
     elif copied_file_name in os.listdir(folder_path):
-        print(f'{copied_file_name} already exists in the directory')
+        print(f'A file with this name: {copied_file_name} already exists in the directory')
         return
     else:
         os.system(f'cp {folder_path}/{file_name} {folder_path}/{copied_file_name}')
