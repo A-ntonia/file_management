@@ -27,6 +27,14 @@ def remove_folder(folder_name):
     else:
         print(f'{folder_name} does not exist in the directory')
 
+def copy_file(file_name, copied_file_name):
+    if file_name not in os.listdir():
+        print(f'{file_name} does not exist in the directory')
+    elif copied_file_name in os.listdir():
+        print(f'{copied_file_name} already exists in the directory')
+    else:
+        os.system(f'cp {file_name} {copied_file_name}')
+
 def list_files_and_folders():
     print(os.listdir())
 

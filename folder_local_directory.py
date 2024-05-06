@@ -19,3 +19,11 @@ def rename_folder(previous_name, new_name):
         print(f'{new_name} already exists in the directory')
     else:
         os.rename(previous_name, new_name)
+
+def copy_folder(folder_name, copied_folder_name):
+    if folder_name not in os.listdir():
+        print(f'{folder_name} does not exist in the directory')
+    elif copied_folder_name in os.listdir():
+        print(f'{copied_folder_name} already exists in the directory')
+    else:
+        os.system(f'cp {folder_name} {copied_folder_name}')
